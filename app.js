@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const RoutePosts = require('./routes/api/posts');
+const DbConnection=require('./database/connection');
 //console.log('every thing can start');
 
 //app.use('/api/v1/posts',RoutePosts);
