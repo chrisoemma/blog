@@ -19,22 +19,24 @@ exports.createPost = (title, content) => {
     const post = new Post({
         _id: new mongoose.Types.ObjectId,
         title: title,
-        content:content
+        content: content
     });
     return post.save();
 }
 
-exports.updatePost=(pId,title,content)=>{
-    const post=new Post({
-        id:pId,
-        title:title,
-        content:content
+exports.updatePost = (pId, title, content) => {
+    const post = new Post({
+        id: pId,
+        title: title,
+        content: content
     });
-
-   return  Post.updateOne({ _id: pId }, post);
+    return Post.updateOne({ _id: pId }, post);
 }
 
-exports.getPost=(pId)=>{
-  return  Post.findById(pId);
-
+exports.getPost = (pId) => {
+    return Post.findById(pId);
 }
+exports.deletePost = (pId) => {
+    return Post.deleteOne({ _id: pId });
+}
+
