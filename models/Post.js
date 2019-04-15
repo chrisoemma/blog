@@ -30,7 +30,11 @@ exports.updatePost=(pId,title,content)=>{
         title:title,
         content:content
     });
-    
+
    return  Post.updateOne({ _id: pId }, post);
 }
 
+exports.getPost=(pId)=>{
+  return  Post.findById(pId);
+
+}
