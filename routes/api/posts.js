@@ -3,5 +3,6 @@ const PostsController = require('../../controllers/PostsController');
 const router = express.Router();
 router.get('/', PostsController.getposts);
 router.post('/', PostsController.createNewPost);
+router.patch('/:postId',PostsController.updateAPost);
 
 module.exports = router;

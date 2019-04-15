@@ -1,4 +1,5 @@
 const mongoose = require('mongoose'); //require mongoose
+
 //Defining Post schema
 const PostSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
@@ -18,8 +19,18 @@ exports.createPost = (title, content) => {
     const post = new Post({
         _id: new mongoose.Types.ObjectId,
         title: title,
-        content: content
+        content:content
     });
     return post.save();
+}
+
+exports.updatePost=(pId,title,content)=>{
+    const post=new Post({
+        id:pId,
+        title:title,
+        content:content
+    });
+    
+   return  Post.updateOne({ _id: pId }, post);
 }
 
